@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andromedra.store_comprar</title>
+  <link rel="stylesheet" href="page_compras.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
+  </head>
+<body>
+
+ <h1>Faça suas compras na velocidade da luz</h1>
+
+
+
+
+  <nav>
+<div class="conteiner"
+    <a href="/">Home</a>
+     <a href="/ecommerce.html">E-commerce</a>
+    <a href="/cart">Cart</a>
+  </nav>
+
+
+<div class="img__bg">
+<div class="cited">
+<blockquote cite="star wars">
+    "Assim como a Força permeia todas as coisas,<br> os termos de responsabilidade do e-commerce são o escudo protetor que defende tanto consumidores quanto vendedores na galáxia digital."
+</blockquote>
+</div>
+
+<figure class="img_bg">
+    <img src="" alt="">
+    
+</figure>
+
+
+</div>
+<main>
+ <body>
+ <form id="purchaseForm">
+        <div class="place__bg">
+            <div class="place__glass">
+                <div class="place_contato">
+                    <label for="contato">Contato</label>
+                    <input type="email" id="place__contato" placeholder="Email" required> 
+                </div>
+                <div class="place_Entrega">
+                    <label for="pais">País/Região</label>
+                    <input type="text" id="place_pais" placeholder="Brasil" required> 
+                </div>
+                <div class="place_nome">
+                    <label for="nome">Nome (opcional)</label>
+                    <input type="text" id="place__nome" placeholder="Nome"> 
+                </div>
+                <div class="place__sobrenome">
+                    <label for="sobrenome">Sobrenome</label>
+                    <input type="text" id="place__sobrenome" placeholder="Sobrenome" required> 
+                </div>
+                <div class="place__cep">
+                    <label for="cep">CEP</label>
+                    <input type="text" id="place__cep" placeholder="CEP" required> 
+                    <button type="button" id="buscarCep" class="buscar__btn">Buscar</button>
+                </div>
+                <div class="place_endereco">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" id="place__endereco" placeholder="Endereço" required> 
+                </div>
+                <div class="place_cidade">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="place__cidade" placeholder="Cidade" required> 
+                </div>
+            </div>
+        </div>
+
+        <div class="place__pagamento">
+            <div class="place__bg2">
+            <h2>Pagamento</h2>
+                <div class="place_pay">
+                <label for="cartao">Cartão de Crédito</label>
+                <input type="radio" id="cartao" name="pagamento" value="cartao" required>
+                <label for="pix">PIX</label>
+                <input type="radio" id="pix" name="pagamento" value="pix">
+            </div>
+            <div class="num__cartao">
+                <label for="numero">Número do Cartão</label>
+                <input type="text" id="num__cartao" placeholder="Número do Cartão" required>
+            </div>
+            <div class="data__vencimento">
+                <label for="data_vencimento">Data de Vencimento</label>
+                <input type="date" id="date_vencimento" placeholder="MM/AA" required>
+            </div>
+            <div class="cod_seguranca">
+                <label for="cod_seguranca">Código de Segurança</label>
+                <input type="text" id="cod_vencimento" placeholder="Código de Segurança" required>
+            </div>
+            <div class="nome__cartao">
+                <label for="nome_cartao">Nome no Cartão</label>
+                <input type="text" id="nome_cartao" placeholder="Nome do Cartão" required>
+            </div>
+            <div id="subtotal" class="subtotal">
+            </div>
+            <div id="total" class="total">
+            </div>
+        <a href="/" class="pay_button" id="checkout">Checkout</a>
+        
+<script>
+    document.getElementById('checkout').addEventListener('click', (event) => {
+        event.preventDefault(); // Evita o comportamento padrão do link
+
+        // Obtendo os valores dos campos
+        const contato = document.getElementById('place__contato').value;
+        const pais = document.getElementById('place_pais').value;
+        const nome = document.getElementById('place__nome').value;
+        const sobrenome = document.getElementById('place__sobrenome').value;
+        const cep = document.getElementById('place__cep').value;
+        const endereco = document.getElementById('place__endereco').value;
+        const cidade = document.getElementById('place__cidade').value;
+        const num_cartao = document.getElementById('num__cartao').value;
+        const data_vencimento = document.getElementById('date_vencimento').value;
+        const cod_seguranca = document.getElementById('cod_vencimento').value;
+        const nome_cartao = document.getElementById('nome_cartao').value;
+        const pagamento = document.querySelector('input[name="pagamento"]:checked')?.value;
+
+        // Verificando se todos os campos obrigatórios estão preenchidos
+        if (!contato || !pais || !nome || !sobrenome || !cep || !endereco || !cidade || !num_cartao || !data_vencimento || !cod_seguranca || !nome_cartao || !pagamento) {
+            alert('Por favor, preencha todos os campos obrigatórios.');
+            return;
+        }
+
+        // Redireciona para a página de checkout
+        window.location.href = 'https://sandbox.mercadopago.com.br/checkout/v1/redirect/9375e1b8-66f7-4c5c-8845-61021438a8cd/error/?preference-id=1431802941-778689a8-a3be-4a27-b0c3-b1d9d9aafb75&router-request-id=b5a5f191-6bb4-43ef-bf61-c8921200b4f3&p=7b9aafd591a0dd00fdeb8c602e639425';
+    });
+</script>
+
+        </div>
+             </div>
+    </form>
+
+
+<script>
+    async function getCartItems() {
+        try {
+            const response = await fetch('/cart_items');
+            const data = await response.json();
+            return data.items.map(item => ({
+                name: item.name,
+                quantity: 1,
+                price: item.price
+            }));
+        } catch (error) {
+            console.error('Error fetching cart items:', error);
+            return [];
+        }
+    }
+
+</script>
+
+    <div class="frete">
+        
+        <div class="frete__vidro">
+            <h3> Frete grátis para TODA á galáxia</h3>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        let subtotal = 0;
+
+        carrinho.forEach(item => {
+            subtotal += item.preco * item.quantidade;
+        });
+
+        const subtotalElement = document.getElementById('subtotal');
+        subtotalElement.innerText = `Subtotal: R$${subtotal.toFixed(2)}`;
+
+        const total = calcularTotal(subtotal);
+        const totalElement = document.getElementById('total');
+        totalElement.innerText = `Total: R$${total.toFixed(2)}`;
+                
+
+    function calcularTotal(subtotal) {
+        const imposto = 0.1 * subtotal;
+        return subtotal + imposto;
+    }
+</script>
+
+
+</main>
+<footer>
+<a href="/" class="footer-link">Saiba Mais</a>
+    <a href="/cart.html" class="footer-link">Cart</a>
+    <a href="/ecommerce.html" class="footer-link">Compras</a>
+    <a href="/" class="footer-link">About us</a>
+</footer>
+
+
+
+
+</body>
+
+
+</html>
+
