@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home_Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+VIC:wght@100..400&family=Playwrite+IS:wght@100..400&display=swap" rel="stylesheet">
+  <script defer src="script2.js"></script>
+</head>
+<body>
+<div class="img-bg">
+  
+   
+  <nav>
+    <a href="/index.html">Home</a>
+    <a href="/cart.html">Cart</a>
+     <a href="/ecommerce.html">E-commerce</a>
+    
+  </nav>
+<div class="typing-effect">
+    <h1 id="typed-text" class="barlow-thin"></h1>
+</div>
+<p>Explorando o Universo de Compras</p>
+</div>
+   <script>
+        const typedTextSpan = document.querySelector('#typed-text');
+        const textArray = ["<Andromêdra.Store/>"];
+        const typingDelay = 100; // delay entre a digitação de cada letra
+        const erasingDelay = 50; // delay entre a remoção de cada letra
+        const newTextDelay = 2000; // tempo de espera depois que o texto for digitado
+        let textArrayIndex = 0;
+        let charIndex = 0;
+        let eraseText = false; // flag para controlar se deve apagar o texto
+
+        function type() {
+            if (charIndex < textArray[textArrayIndex].length) {
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
+            } else {
+                eraseText = true; // indica que o texto deve ser apagado
+                setTimeout(erase, newTextDelay);
+            }
+        }
+
+        function erase() {
+            if (eraseText && charIndex > 0) {
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+            } else {
+                eraseText = false; // resetar a flag
+                textArrayIndex++;
+                if (textArrayIndex >= textArray.length) {
+                    textArrayIndex = 0;
+                }
+                setTimeout(type, typingDelay + 1100);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(type, newTextDelay + 250);
+        });
+    </script>
+
+
+
+
+
+<div class="box-main">  
+ <div class="Principais">
+<h2>Principais Produtos <br>da Galáxia </h2>
+
+    <div class="linha">
+           <div class="p_card">
+    <div class="actions">
+                <button onclick="adicionarAoCarrinho('Camiseta Star Wars',175.50)">Add ao Carrinho</button>
+                    </div>
+                <h3>Camiseta Star Wars</h3>
+         <figure class="img-card">
+                <img src=".anima/Extra Soft Star Wars The Mandalorian Naps T-Shirt.jpeg" alt="Imagem do Card 1">
+            </figure>
+            <p>R$175,50</p>
+        </div>
+    <div class="p_card">
+    <div class="actions">
+                <button onclick="adicionarAoCarrinho('Camiseta Star Wars',155.50)">Add ao Carrinho</button>
+                    </div>
+                <h3>Camiseta Star Wars</h3>
+         <figure class="img-card">
+                <img src=".anima/Playera Hombre Moda Camiseta Negro Star Wars 58204845 - MED _ Negro.jpeg" alt="Imagem do Card 1">
+            </figure>
+            <p>R$155,50</p>
+        </div>
+    <div class="p_card">
+    <div class="actions">
+                <button onclick="adicionarAoCarrinho('Camiseta Loki',187.30)">Add ao Carrinho</button>
+                    </div>
+                <h3>Camiseta Loki</h3>
+         <figure class="img-card">
+                <img src=".anima/Marvel Loki Big Metaphor T-Shirt.jpeg" alt="Imagem do Card 1">
+            </figure>
+            <p>R$187,30</p>
+        </div>
+    <div class="p_card">
+    <div class="actions">
+                <button onclick="adicionarAoCarrinho('Camiseta Kakegurui',189.60)">Add ao Carrinho</button>
+                    </div>
+                <h3>Camiseta Kakegurui</h3>
+         <figure class="img-card">
+                <img src=".anima/Camiseta T-Shirt Kakegurui Caveira Cartas Algodão - Store Seven.jpeg" alt="Imagem do Card 1">
+            </figure>
+            <p>R$189,60</p>
+        </div>
+          
+          
+       
+       </div>             
+       </div>
+    </div>
+</div>
+<div class="box-conteiner">
+      
+        <div class="box-image main-image">
+            <figure><img src="" alt=""></figure>
+        </div>
+       </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+</div>
+</main>
+<h5>Mais Vendidos</h5>
+    <div class="principais__cards3">
+    <div class="Principais3">
+        <div class="grid-container3">
+
+            <div class="p_card3">
+            <div class="actions">
+                <button onclick="adicionarAoCarrinho('Moletom Attack on Titan', 299.23)">Add ao Carrinho</button>
+                    </div>
+                <h3>Moletom Eren Yeager</h3>
+                <figure class="img-card">
+                    <img src=".anima/Blusa Moletom Attack On Titan Mikasa Ackerman Anime Canguru - Msouza.jpeg" alt="Imagem do Card 1">
+                </figure>
+                <p>R$299,23</p>
+            </div>
+        
+            <div class="p_card3">
+            <div class="actions">
+                <button onclick="adicionarAoCarrinho('Moletom Star Wars' ,222.99)">Add ao Carrinho</button>
+                    </div>
+                <h3>Moletom Star Wars</h3>
+                <figure class="img-card">
+                    <img src=".anima/Blusa Moletom Star Wars Casaco Com Capuz Algodão The Geek - Mtc.jpeg" alt="Imagem do Card 3">
+                </figure>
+                <p>R$222,99</p>
+            </div>
+            <div class="p_card3">
+            <div class="actions">
+                <button onclick="adicionarAoCarrinho('Moletom Jujutsu Kaisen ' ,254.70)">Add ao Carrinho</button>
+                    </div>
+                <h3>Moletom Jujutsu Kaisen</h3>
+                <figure class="img-card">
+                    <img src=".anima/Jujutsu Kaisen Anime Hoodie Satoru Gojo Suguru Geto Cute JJK.jpeg" alt="Imagem do Card 4">
+                </figure>
+                <p>R$254,70</p>
+            </div>
+            <div class="p_card3">
+            <div class="actions">
+                <button onclick="adicionarAoCarrinho('Moletom Genshin', 250.00)">Add ao Carrinho</button>
+                    </div>
+                <h3> Moletom Genshin</h3>
+                <figure class="img-card">
+                    <img src=".anima/Moletom Blusa Genshin Impact Nahida De Sumeru Jogo Rpg 841.jpeg" alt="Imagem do Card 5">
+                </figure>
+                <p>R$250,00</p>
+    </div>    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <a  href="login.html"type="button" class="footer-button">Login</a>
+    <a href="/" class="footer-link">Saiba Mais</a>
+    <a href="/cart.html" class="footer-link">Cart</a>
+    <a href="/ecommerce.html" class="footer-link">Compras</a>
+    <a href="/" class="footer-link">About us</a>
+</footer>
+
+
+
+
+
+
+</body>
+</html>
