@@ -54,7 +54,7 @@ h1{
 
 .conteiner__bg {
     position: relative; /* Garante que os elementos internos possam ser posicionados relativamente */
-    width: 35%; /* Ocupa toda a largura disponível */
+    width: 55%; /* Ocupa toda a largura disponível */
     height: 800px; /* Altura igual à altura da viewport */
     background-image: url('.anima/Stormtrooper\ 🌌.jpeg'); /* Substitua pelo caminho correto da sua imagem */
     background-size: cover; 
@@ -89,13 +89,13 @@ h5{
   margin-right: 50%;
 }
 .conteiner__fundo{
-  width: 35%;
+  width: 55%;
   height: 800px;
   background-image: url('.anima/download\ -\ 2024-08-10T230608.407.jpeg');
   display: grid;
   margin-left: 55%;
   left: 0px;
-  margin-top: -53%;
+  margin-top: -43%;
   justify-content: center; 
   border-radius: 28px;
   align-items: center; 
